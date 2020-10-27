@@ -1,0 +1,19 @@
+server:
+  port: 8080
+  compression:
+    enabled: true
+    mime-types:
+      - application-json
+      - application/xml
+      - application/javascript
+      - text/html
+      - text/xml
+      - text/plain
+      - text/css
+    min-response-size: 2048
+
+spring:
+  freemarker:
+    check-template-location: false
+
+
