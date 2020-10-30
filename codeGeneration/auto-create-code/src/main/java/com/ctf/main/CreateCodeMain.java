@@ -34,7 +34,7 @@ public class CreateCodeMain {
 	public static void main(String[] args) {
 
 		BeanProperties.setPackage("Java");//包名
-		BeanProperties.setTableName("dj_partner_source");//数据库表名
+		BeanProperties.setTableName("dj_customer_info");//数据库表名
 		BeanProperties.setSchema("dj_second_phase");//数据库名称
 		BeanProperties.setPath("C:\\upload");//生成的类存放的路径
 		BeanProperties.setAuthor("caotengfei");//代码生成者

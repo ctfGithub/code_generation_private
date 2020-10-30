@@ -1,10 +1,13 @@
 package com.ctf.factory;
 
+import com.alibaba.fastjson.JSONObject;
 import com.ctf.enums.ResultEnum;
 import com.ctf.exception.AccException;
 import com.ctf.template.TemplateClassPath;
 import com.ctf.util.ConnectionUtil;
 import com.ctf.util.FreeMarkerManager;
+import com.google.gson.JsonObject;
+import lombok.extern.slf4j.Slf4j;
 
 import java.sql.Connection;
 import java.sql.PreparedStatement;
@@ -14,6 +17,7 @@ import java.text.SimpleDateFormat;
 import java.util.*;
 
 
+@Slf4j
 public class AutoGenerationCodeTool extends BaseTool {
 
 	private List<String> colNames;   //列名数组
@@ -85,6 +89,8 @@ public class AutoGenerationCodeTool extends BaseTool {
 			ps.setString(1, schema.toUpperCase());
 			ps.setString(2, tableName.toUpperCase());
 			rs = ps.executeQuery();
+//			log.info("获取相关数据"+ JSONObject.toJSONString(rs));
+
 
             if (rs.next()) {
                 do {
