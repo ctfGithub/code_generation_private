@@ -89,7 +89,7 @@ public class AutoGenerationCodeTool extends BaseTool {
 			ps.setString(1, schema.toUpperCase());
 			ps.setString(2, tableName.toUpperCase());
 			rs = ps.executeQuery();
-//			log.info("获取相关数据"+ JSONObject.toJSONString(rs));
+//			log.info("获取相关数据"+ rs);
 
 
             if (rs.next()) {
@@ -371,9 +371,9 @@ public class AutoGenerationCodeTool extends BaseTool {
 	private String getInsertColumns() {
 		StringBuffer content = new StringBuffer();
 		for (int i = 0; i < colNames.size(); i++) {
-			if (i == colNames.size()-1) {
+			if (i == colNames.size()-1 && ! colNames.get(i).equals("id")) {
 				content.append(colNames.get(i).toUpperCase());//字段名称
-			} else {
+			} else if(!colNames.get(i).equals("id")) {
 				content.append(colNames.get(i).toUpperCase() + ",");//字段名称
 			}
 		}
@@ -384,9 +384,9 @@ public class AutoGenerationCodeTool extends BaseTool {
 	private String getInsertProps() {
 		StringBuffer content = new StringBuffer();
 		for (int i = 0; i < colNames.size(); i++) {
-			if (i == colNames.size()-1) {
+			if (i == colNames.size()-1 && !colNames.get(i).equals("id")) {
 				content.append("#{"+initcapColName(colNames.get(i))+"}");//字段名称
-			} else {
+			} else if(!colNames.get(i).equals("id")) {
 				content.append("#{"+initcapColName(colNames.get(i))+"}"+ ",");//字段名称
 			}
 		}
