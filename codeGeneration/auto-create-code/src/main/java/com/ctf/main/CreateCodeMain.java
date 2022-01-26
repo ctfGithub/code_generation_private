@@ -32,13 +32,12 @@ public class CreateCodeMain {
 
 
 	public static void main(String[] args) {
-
 		BeanProperties.setPackage("Java");//包名
-		BeanProperties.setTableName("dj_customer_info");//数据库表名
-		BeanProperties.setSchema("dj_second_phase");//数据库名称
-		BeanProperties.setPath("C:\\upload");//生成的类存放的路径
+		BeanProperties.setTableName("products");//数据库表名
+		BeanProperties.setSchema("uc");//数据库名称
+		BeanProperties.setPath("/Users/caotengfei/Downloads");//生成的类存放的路径
 		BeanProperties.setAuthor("caotengfei");//代码生成者
-		ConnectionUtil.dbUrl = "jdbc:mysql://127.0.0.1:3306/dj_second_phase?characterEncoding=utf-8&serverTimezone=UTC";
+		ConnectionUtil.dbUrl = "jdbc:mysql://127.0.0.1:3306/uc?characterEncoding=utf-8&serverTimezone=UTC&allowPublicKeyRetrieval=true&useSSL=false";
 		ConnectionUtil.theUser = "root";//数据库登录用户
 		ConnectionUtil.thePw = "123456";//数据库登录用户密码
 		//生成代码

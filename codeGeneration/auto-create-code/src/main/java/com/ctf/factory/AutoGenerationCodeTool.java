@@ -86,10 +86,11 @@ public class AutoGenerationCodeTool extends BaseTool {
 			conn = jdbc.getConn(); // 得到数据库连接
 			//1.获取表中的字段名称、字段类型、字段描述、字段类型长度
 			PreparedStatement ps = conn.prepareStatement(ConnectionUtil.getMetaDataSql());
-			ps.setString(1, schema.toUpperCase());
-			ps.setString(2, tableName.toUpperCase());
+			ps.setString(1, schema.toLowerCase());
+			ps.setString(2, tableName.toLowerCase());
+			log.info("获取相关数据ps:"+ ps);
 			rs = ps.executeQuery();
-//			log.info("获取相关数据"+ rs);
+			log.info("获取相关数据"+ rs);
 
 
             if (rs.next()) {

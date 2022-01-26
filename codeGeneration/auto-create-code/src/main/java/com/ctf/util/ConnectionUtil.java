@@ -8,8 +8,8 @@ import java.sql.*;
 
 public class ConnectionUtil {
 
-	public static String dbUrl = "jdbc:mysql://localhost:3306/springboot?characterEncoding=utf-8&serverTimezone=UTC";
-	public static String theUser = "work";
+	public static String dbUrl = "jdbc:mysql://localhost:3306/uc?characterEncoding=utf-8&serverTimezone=UTC&allowPublicKeyRetrieval=true&useSSL=false";
+	public static String theUser = "root";
 	public static String thePw = "123456";
 	Connection conn = null;
 	Statement stmt;
@@ -110,7 +110,7 @@ public class ConnectionUtil {
 	public static void main(String[] args) {
 		ResultSet rs;
 		ConnectionUtil conn = new ConnectionUtil();
-		rs = conn.executeQuery("select * from student t");
+		rs = conn.executeQuery("select * from students t");
 		try {
 			while (rs.next()) {
 				System.out.println(rs.getString("age"));

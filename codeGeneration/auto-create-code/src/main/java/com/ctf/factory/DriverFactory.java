@@ -9,7 +9,7 @@ import com.ctf.exception.AccException;
 * @Date: 2019/5/13 14:20
 */
 public class DriverFactory {
-    private final static String DRIVER_MYSQL = "com.mysql.jdbc.Driver";
+    private final static String DRIVER_MYSQL = "com.mysql.cj.jdbc.Driver";
     private final static String DRIVER_ORACLE = "oracle.jdbc.driver.OracleDriver";
 
     public static String getDriver(String url) throws AccException {
