@@ -43,6 +43,7 @@ public class CreateCodeMain {
 		//生成代码
 		new AutoGenerationCodeTool().createCode();
 
+
 	}
 
 }
